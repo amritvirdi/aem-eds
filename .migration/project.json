@@ -1,0 +1,9 @@
+{
+  "sites": {
+    "aem-eds": {
+      "previewOrg": "amritvirdi",
+      "previewSite": "aem-eds",
+      "contentHostUrl": "https://content.da.live/amritvirdi/aem-eds/"
+    }
+  }
+}
