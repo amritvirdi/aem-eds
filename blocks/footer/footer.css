@@ -13,6 +13,27 @@ footer .footer p {
   margin: 0;
 }
 
+/* social media icons */
+footer .footer p .icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+footer .footer p a:has(.icon) {
+  color: var(--text-color);
+}
+
+footer .footer p a:has(.icon):hover {
+  color: var(--link-color);
+}
+
+footer .footer .icon img {
+  width: 100%;
+  height: 100%;
+}
+
 @media (width >= 900px) {
   footer .footer > div {
     padding: 40px 32px 24px;
