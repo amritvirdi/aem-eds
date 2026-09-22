@@ -1,0 +1,10 @@
+{
+  "variantName": "columns-intro",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Two-column intro layout: left cell holds a large heading, a subheading paragraph, and two CTA buttons; right cell holds a vertical stack of three images. Sits on a grey (secondary) section.",
+  "contentPattern": "Row 1 (left): heading + paragraph + two links (CTAs). Row 1 (right): three stacked images.",
+  "usage": "Use at the top of a page as a hero-style intro pairing a text/CTA column with a group of images.",
+  "options": [],
+  "memberVariantIds": ["columns-intro"]
+}

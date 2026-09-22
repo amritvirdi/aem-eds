@@ -1,0 +1,10 @@
+{
+  "variantName": "columns-article",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Two-column article header: large cover image on the left; breadcrumbs, heading, author byline and date/read-time on the right. Sits on a white section.",
+  "contentPattern": "Row 1 (left): cover image. Row 1 (right): breadcrumb links + heading + author/date text.",
+  "usage": "Use as an article or case-study header pairing a cover image with title and byline metadata.",
+  "options": [],
+  "memberVariantIds": ["columns-article"]
+}

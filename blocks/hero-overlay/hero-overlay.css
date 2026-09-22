@@ -1,0 +1,119 @@
+/* Block: hero-overlay -- contained rounded card with cover image, dark
+   bottom-to-top gradient overlay, and overlaid heading/subheading/CTA.
+   Values extracted from source computed styles. */
+
+.hero-overlay {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 448px;
+  border-radius: 20px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Background image row: fills the card */
+.hero-overlay .hero-overlay-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  margin: 0;
+}
+
+.hero-overlay .hero-overlay-image > div,
+.hero-overlay .hero-overlay-image picture {
+  display: block;
+  height: 100%;
+}
+
+.hero-overlay .hero-overlay-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark gradient overlay above image, below text */
+.hero-overlay:not(.no-image)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: linear-gradient(to top, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 0%) 60%);
+  pointer-events: none;
+}
+
+/* Content row: overlaid text */
+.hero-overlay .hero-overlay-content {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 64px;
+}
+
+.hero-overlay .hero-overlay-content > div {
+  max-width: 672px;
+}
+
+.hero-overlay h1,
+.hero-overlay h2,
+.hero-overlay h3 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -0.56px;
+  color: var(--background-color);
+}
+
+.hero-overlay p {
+  margin: 16px 0 0;
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  color: var(--background-color);
+}
+
+/* CTA: white pill with black text. The source link is a plain anchor
+   (no strong/em), so EDS does not add the .button class -- style the
+   bare anchor directly. The last content paragraph wraps the CTA. */
+.hero-overlay .hero-overlay-content p:last-child {
+  margin: 32px 0 0;
+}
+
+main .hero-overlay .hero-overlay-content a:any-link,
+main .hero-overlay a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--background-color);
+  border-radius: 9999px;
+  padding: 12px 24px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+main .hero-overlay .hero-overlay-content a:any-link:hover,
+main .hero-overlay .hero-overlay-content a:any-link:focus-visible,
+main .hero-overlay a.button:any-link:hover,
+main .hero-overlay a.button:any-link:focus-visible {
+  border-color: var(--light-color);
+  background-color: var(--light-color);
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* Fallback when no background image is authored */
+.hero-overlay.no-image {
+  background-color: var(--dark-color);
+}
+
+@media (width >= 900px) {
+  .hero-overlay h1,
+  .hero-overlay h2,
+  .hero-overlay h3 {
+    font-size: 56px;
+    letter-spacing: -1.12px;
+  }
+}

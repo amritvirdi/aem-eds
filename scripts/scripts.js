@@ -143,6 +143,36 @@ function decorateButtons(main) {
 }
 
 /**
+ * Applies section-metadata (e.g. `style`) as classes on each section, then
+ * removes the metadata block. The vendored aem.js `decorateSections` does not
+ * process section-metadata, so without this the `.section-metadata` div is
+ * mistaken for a block and 404s. Must run before `decorateSections`.
+ * @param {Element} main The container element
+ */
+function decorateSectionMetadata(main) {
+  main.querySelectorAll(':scope > div > div.section-metadata').forEach((sectionMeta) => {
+    const section = sectionMeta.parentElement;
+    if (!section) return;
+    [...sectionMeta.children].forEach((row) => {
+      const cells = [...row.children];
+      if (cells.length < 2) return;
+      const key = cells[0].textContent.trim().toLowerCase();
+      const value = cells[1].textContent.trim();
+      if (key === 'style') {
+        value.split(',').forEach((style) => {
+          const cls = style.trim().toLowerCase().replace(/[^0-9a-z]+/g, '-').replace(/^-+|-+$/g, '');
+          if (cls) section.classList.add(cls);
+        });
+      } else if (key) {
+        const camel = key.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+        section.dataset[camel] = value;
+      }
+    });
+    sectionMeta.remove();
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -150,6 +180,7 @@ function decorateButtons(main) {
 export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
+  decorateSectionMetadata(main);
   decorateSections(main);
   decorateBlocks(main);
   decorateButtons(main);
