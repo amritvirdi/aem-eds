@@ -1,0 +1,10 @@
+{
+  "variantName": "accordion-faq",
+  "baseBlock": "accordion",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "A vertical list of collapsible FAQ items. Each item shows a question with a chevron that expands to reveal the answer.",
+  "contentPattern": "Each row: title cell (question) + content cell (answer).",
+  "usage": "Use for FAQ sections or any list of expandable question/answer or title/content pairs.",
+  "options": [],
+  "memberVariantIds": ["accordion-faq"]
+}

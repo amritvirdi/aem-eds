@@ -1,0 +1,10 @@
+{
+  "variantName": "tabs-testimonial",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": "Tabbed testimonial interface: a horizontal tab menu where each tab shows a person's avatar, name and role; selecting a tab reveals a panel with that person's photo, name, role and quote.",
+  "contentPattern": "Each tab row: label cell (avatar + name + role) and content cell (photo + name + role + quote).",
+  "usage": "Use to present multiple testimonials or profiles as switchable tabbed panels.",
+  "options": [],
+  "memberVariantIds": ["tabs-testimonial"]
+}

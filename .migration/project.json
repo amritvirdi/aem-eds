@@ -1,9 +1,11 @@
 {
+  "type": "da",
   "sites": {
     "aem-eds": {
       "previewOrg": "amritvirdi",
       "previewSite": "aem-eds",
-      "contentHostUrl": "https://content.da.live/amritvirdi/aem-eds/"
+      "contentHostUrl": "https://content.da.live/amritvirdi/aem-eds/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
     }
   }
 }

@@ -1,0 +1,106 @@
+/* Block: columns-intro -- values extracted from source computed styles */
+
+/* row: single column on mobile, image group stacks below text */
+.columns-intro > div {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.columns-intro .columns-intro-text {
+  order: 0;
+}
+
+.columns-intro .columns-intro-img-col {
+  order: 1;
+}
+
+/* headings */
+.columns-intro h1 {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: var(--heading-font-family);
+  line-height: 30.8px;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* subheading */
+.columns-intro .columns-intro-text p {
+  font-size: 18px;
+  font-family: var(--body-font-family);
+  line-height: 28.8px;
+  color: var(--text-color);
+  margin: 24px 0 0;
+}
+
+/* CTA group */
+.columns-intro .columns-intro-cta {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 16px;
+  margin: 32px 0 0;
+}
+
+/* CTA buttons -- exact source values (14px / 600, pill, 2px border) */
+.columns-intro .columns-intro-cta a.button:any-link {
+  padding: 12px 24px;
+  border: 2px solid var(--text-color);
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: none;
+}
+
+.columns-intro .columns-intro-cta a.button.primary:any-link {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.columns-intro .columns-intro-cta a.button.secondary:any-link {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* image group: EDS wraps the 3 pictures in a single <p> */
+.columns-intro .columns-intro-img-col > p {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0;
+}
+
+.columns-intro .columns-intro-img-col picture {
+  display: block;
+}
+
+.columns-intro .columns-intro-img-col img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+@media (width >= 900px) {
+  .columns-intro > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .columns-intro .columns-intro-text,
+  .columns-intro .columns-intro-img-col {
+    flex: 1;
+    order: unset;
+  }
+
+  .columns-intro h1 {
+    font-size: 56px;
+    line-height: 61.6px;
+    letter-spacing: -1.12px;
+  }
+}
